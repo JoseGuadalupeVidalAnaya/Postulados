@@ -91,13 +91,20 @@ public class Operaciones
             return true;
         return false;
     }
+
     public boolean p3(String bin)
     {
-        for (int i = 1; i < bin.length(); i++)
+        //float x = comparar(bin, cambiar(bin, 1));
+        //System.out.println(x);
+        float x=0;
+        for (int i = 2; i < bin.length(); i++)
         {
-            System.out.println(cambiar(bin,i));
+            //if (x > comparar(bin, cambiar(bin, i)))
+                //return false;
+            x = comparar(bin, cambiar(bin, i));
+            System.out.println(x);
         }
-        return false;
+        return true;
     }
 
     public int contar0(String bin)
@@ -142,18 +149,24 @@ public class Operaciones
 
         return cont;
     }
-    public String cambiar(String bin,int x)
+
+    public String cambiar(String bin, int x)
     {
-        return bin.substring(x)+bin.substring(0,x);
+        return bin.substring(x) + bin.substring(0, x);
     }
-    private int comparar(String bin,String aux)
+
+    private float comparar(String bin, String aux)
     {
-        int x=0;
-        for (int i = 0; i <bin.length() ; i++)
+        float x = 0;
+        float y=0;
+        for (int i = 0; i < bin.length(); i++)
         {
-            if (bin.charAt(i)==aux.charAt(i))
+            if (bin.charAt(i) == aux.charAt(i))
                 x++;
+            else
+                y++;
         }
-        return x;
+        System.out.println(x+" "+y);
+        return (x-y)/bin.length();
     }
 }
