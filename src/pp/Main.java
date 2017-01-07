@@ -15,6 +15,7 @@ public class Main extends Application
         Parent root = FXMLLoader.load(getClass().getResource("Ventana.fxml"));
         primaryStage.setTitle("Postulados de Golomb");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

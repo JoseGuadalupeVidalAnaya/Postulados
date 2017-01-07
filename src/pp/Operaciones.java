@@ -94,15 +94,12 @@ public class Operaciones
 
     public boolean p3(String bin)
     {
-        //float x = comparar(bin, cambiar(bin, 1));
-        //System.out.println(x);
-        float x=0;
+        float x = comparar(bin, cambiar(bin, 1));
         for (int i = 2; i < bin.length(); i++)
         {
-            //if (x > comparar(bin, cambiar(bin, i)))
-                //return false;
+            if (x > comparar(bin, cambiar(bin, i)))
+                return false;
             x = comparar(bin, cambiar(bin, i));
-            System.out.println(x);
         }
         return true;
     }
@@ -158,7 +155,7 @@ public class Operaciones
     private float comparar(String bin, String aux)
     {
         float x = 0;
-        float y=0;
+        float y = 0;
         for (int i = 0; i < bin.length(); i++)
         {
             if (bin.charAt(i) == aux.charAt(i))
@@ -166,7 +163,6 @@ public class Operaciones
             else
                 y++;
         }
-        System.out.println(x+" "+y);
-        return (x-y)/bin.length();
+        return (x - y) / bin.length();
     }
 }

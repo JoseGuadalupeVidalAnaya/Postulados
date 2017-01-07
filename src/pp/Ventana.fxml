@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -8,6 +10,6 @@
        <TextField fx:id="sem" layoutX="85.0" layoutY="15.0" prefHeight="25" prefWidth="300" />
        <Button defaultButton="true" layoutX="85.0" layoutY="55.0" mnemonicParsing="false" onAction="#generar" prefHeight="25.0" prefWidth="110.0" text="Generar" />
        <Label layoutX="15.0" layoutY="95.0" text="Salida" />
-       <TextArea fx:id="out" layoutX="85" layoutY="95" prefHeight="100.0" prefWidth="300.0" />
+       <TextArea fx:id="out" editable="false" layoutX="85" layoutY="95" prefHeight="100.0" prefWidth="300.0" />
    </children>
 </AnchorPane>

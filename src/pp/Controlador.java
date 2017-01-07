@@ -16,21 +16,35 @@ public class Controlador implements Initializable
     private TextField sem;
     @FXML
     private TextArea out;
+
     @FXML
     private void generar(ActionEvent e)
     {
-        int x=Integer.parseInt(sem.getText());
-        String mensaje="Binario: ";
-        String aux=op.binario(x);
-        mensaje=mensaje+aux+"\nNLFSR: ";
-        aux=op.generar(aux);
-        mensaje=mensaje+aux;
-        out.setText(mensaje);
-        System.out.println(op.p3(aux));
+        int x = Integer.parseInt(sem.getText());
+        if (x < 16 && x >= 0)
+        {
+            String mensaje = "Binario: ";
+            String aux = op.binario(x);
+            mensaje = mensaje + aux + "\nNLFSR: ";
+            aux = op.generar(aux);
+            mensaje = mensaje + aux;
+            mensaje = mensaje + "\nPostulado 1: " + op.p1(aux) + "\nPostulado 2: " + op.p2(aux) + "\nPostulad 3: " + op.p3(aux);
+            out.setText(mensaje);
+        }
+        else
+            out.setText("Ingrese un numero mayor o igual a 0\nY menor a 16");
     }
+
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        op=new Operaciones();
+        sem.setOnKeyTyped(e ->
+        {
+            if (!"1234567890".contains(e.getCharacter()))
+                e.consume();
+            if (sem.getText().length() > 1)
+                e.consume();
+        });
+        op = new Operaciones();
     }
 }
