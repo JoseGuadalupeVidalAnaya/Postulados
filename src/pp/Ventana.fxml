@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="210.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pp.Controlador">
+   <children>
+       <Label layoutX="15.0" layoutY="15.0" text="Semilla" />
+       <TextField fx:id="sem" layoutX="85.0" layoutY="15.0" prefHeight="25" prefWidth="300" />
+       <Button defaultButton="true" layoutX="85.0" layoutY="55.0" mnemonicParsing="false" onAction="#generar" prefHeight="25.0" prefWidth="110.0" text="Generar" />
+       <Label layoutX="15.0" layoutY="95.0" text="Salida" />
+       <TextArea fx:id="out" layoutX="85" layoutY="95" prefHeight="100.0" prefWidth="300.0" />
+   </children>
+</AnchorPane>
