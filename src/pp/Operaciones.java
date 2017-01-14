@@ -48,7 +48,6 @@ public class Operaciones
     public String NLFSR(String bin)
     {
         String nlfsr = "" + xor(or(and(toInt(bin.charAt(0)), toInt(bin.charAt(1))), not(toInt(bin.charAt(2)))), toInt(bin.charAt(3)));
-
         return nlfsr;
     }
 
@@ -74,8 +73,8 @@ public class Operaciones
     {
         int x = contar0(bin);
         int y = contar1(bin);
-        System.out.println("Cantidad 0="+x);
-        System.out.println("Cantidad 1="+y);
+        System.out.println("Cantidad 0=" + x);
+        System.out.println("Cantidad 1=" + y);
         if (x == y)
         {
             return "Aceptado";
@@ -89,10 +88,10 @@ public class Operaciones
 
     public String p2(String bin)
     {
-        System.out.println("Rachas de 1: "+rachas(bin, 1));
-        System.out.println("Rachas de 2: "+rachas(bin, 2));
-        System.out.println("Rachas de 3: "+rachas(bin, 3));
-        System.out.println("Rachas de 4: "+rachas(bin, 4));
+        System.out.println("Rachas de 1: " + rachas(bin, 1));
+        System.out.println("Rachas de 2: " + rachas(bin, 2));
+        System.out.println("Rachas de 3: " + rachas(bin, 3));
+        System.out.println("Rachas de 4: " + rachas(bin, 4));
         if (rachas(bin, 1) == 5 && rachas(bin, 2) == 2 && rachas(bin, 3) == 1 && rachas(bin, 4) == 1)
             return "Aceptado";
         return "No aceptado";
@@ -101,13 +100,13 @@ public class Operaciones
     public String p3(String bin)
     {
         float x = comparar(bin, cambiar(bin, 1));
-        System.out.println(cambiar(bin,1)+": "+x);
-        String b="Aceptado";
+        System.out.println(cambiar(bin, 1) + ": " + x);
+        String b = "Aceptado";
         for (int i = 2; i < bin.length(); i++)
         {
-            System.out.println(cambiar(bin,i)+": "+x);
+            System.out.println(cambiar(bin, i) + ": " + x);
             if (x > comparar(bin, cambiar(bin, i)))
-                b= "No aceptado";
+                b = "No aceptado";
             x = comparar(bin, cambiar(bin, i));
         }
         return b;
