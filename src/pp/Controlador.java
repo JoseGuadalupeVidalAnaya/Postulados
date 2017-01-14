@@ -28,7 +28,7 @@ public class Controlador implements Initializable
             mensaje = mensaje + aux + "\nNLFSR: ";
             aux = op.generar(aux);
             mensaje = mensaje + aux;
-            mensaje = mensaje + "\nPostulado 1: " + op.p1(aux) + "\nPostulado 2: " + op.p2(aux) + "\nPostulad 3: " + op.p3(aux);
+            mensaje = mensaje + "\nPostulado 1: " + op.p1(aux) + "\nPostulado 2: " + op.p2(aux) + "\nPostulado 3: " + op.p3(aux);
             out.setText(mensaje);
         }
         else

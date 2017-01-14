@@ -70,38 +70,47 @@ public class Operaciones
         return Integer.parseInt(s + "");
     }
 
-    public boolean p1(String bin)
+    public String p1(String bin)
     {
         int x = contar0(bin);
         int y = contar1(bin);
+        System.out.println("Cantidad 0="+x);
+        System.out.println("Cantidad 1="+y);
         if (x == y)
         {
-            return true;
+            return "Aceptado";
         }
         if (x + 1 == y - 1 || x - 1 == y + 1)
-            return true;
+            return "Aceptado";
         if (x + 1 == y || x == y + 1)
-            return true;
-        return false;
+            return "Aceptado";
+        return "No aceptado";
     }
 
-    public boolean p2(String bin)
+    public String p2(String bin)
     {
+        System.out.println("Rachas de 1: "+rachas(bin, 1));
+        System.out.println("Rachas de 2: "+rachas(bin, 2));
+        System.out.println("Rachas de 3: "+rachas(bin, 3));
+        System.out.println("Rachas de 4: "+rachas(bin, 4));
         if (rachas(bin, 1) == 5 && rachas(bin, 2) == 2 && rachas(bin, 3) == 1 && rachas(bin, 4) == 1)
-            return true;
-        return false;
+            return "Aceptado";
+        return "No aceptado";
     }
 
-    public boolean p3(String bin)
+    public String p3(String bin)
     {
         float x = comparar(bin, cambiar(bin, 1));
+        System.out.println(cambiar(bin,1)+": "+x);
+        String b="Aceptado";
         for (int i = 2; i < bin.length(); i++)
         {
+            System.out.println(cambiar(bin,i)+": "+x);
             if (x > comparar(bin, cambiar(bin, i)))
-                return false;
+                b= "No aceptado";
             x = comparar(bin, cambiar(bin, i));
         }
-        return true;
+        return b;
     }
 
     public int contar0(String bin)

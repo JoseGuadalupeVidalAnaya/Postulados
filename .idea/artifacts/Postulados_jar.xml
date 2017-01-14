@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Postulados:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Postulados_jar</output-path>
+    <root id="archive" name="Postulados.jar">
+      <element id="module-output" name="Postulados" />
+    </root>
+  </artifact>
+</component>
